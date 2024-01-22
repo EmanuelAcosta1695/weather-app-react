@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { fetchWeather } from './hooks/useFetchWeather'
+import { WeatherDisplay } from './components/WeatherDisplay'
 
 export const WheaterApp = () => {
-    const difKelvin = 273.15
 
     const [city, setCity] = useState('')
     const [dataWeather, setDataWeather] = useState(null)
@@ -22,7 +22,6 @@ export const WheaterApp = () => {
         }
     }
 
-
     return (
         <div className='container'>
             <h1>Aplicación del Clima</h1>
@@ -37,12 +36,7 @@ export const WheaterApp = () => {
             </form>
             {
                 dataWeather && (
-                    <div>
-                        <h2>{dataWeather.name}</h2>
-                        <p>Temperatura: {parseInt(dataWeather?.main.temp - difKelvin)}°C</p>
-                        <p>Condición meteorológica: {dataWeather?.weather[0].description}</p>
-                        <img src={`https://openweathermap.org/img/wn/${dataWeather?.weather[0].icon}@2x.png`}/>
-                    </div>
+                    <WeatherDisplay dataWeather={dataWeather}/>
                 )
             }
         </div>
