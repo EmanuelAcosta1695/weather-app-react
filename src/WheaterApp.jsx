@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { fetchWeather } from './hooks/useFetchWeather'
 import { WeatherDisplay } from './components/WeatherDisplay'
+import { WeatherForm } from './components/WeatherForm'
 
 export const WheaterApp = () => {
 
@@ -26,14 +27,11 @@ export const WheaterApp = () => {
         <div className='container'>
             <h1>Aplicación del Clima</h1>
 
-            <form onSubmit={handleSubmit}>
-                <input 
-                    type="text"
-                    value={city}
-                    onChange={handleChangeCity}
-                />
-                <button type='submit'>Buscar</button>
-            </form>
+            <WeatherForm
+                city={city}
+                handleChangeCity={handleChangeCity}
+                handleSubmit={handleSubmit}
+            />
             {
                 dataWeather && (
                     <WeatherDisplay dataWeather={dataWeather}/>
