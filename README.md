@@ -15,14 +15,14 @@ Aplicacion web del clima desarrollada con React.
 
 ## Configrauciones del proyecto
 
-_Instalar las dependencias:
+_Instalar las dependencias:_
 ```
 npm install
 ```
 
-_Obtener una api key de:
+_Obtener una api key de:_
 ```
 https://openweathermap.org/api
 ```
 
-_Crear archivo '.env' y remplazar el valor de 'VITE_WEATHER_API_KEY' con tu api key de openweathermap.
+_Crear archivo '.env' y remplazar el valor de 'VITE_WEATHER_API_KEY' con tu api key de openweathermap._
